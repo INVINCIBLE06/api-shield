@@ -2,13 +2,7 @@
   "name": "api-shield",
   "version": "0.1.0",
   "description": "A production-ready Express middleware toolkit for securing, monitoring, and protecting REST APIs.",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc"
-  },
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-   "keywords": [
+  "keywords": [
     "express",
     "middleware",
     "security",
@@ -20,9 +14,31 @@
     "typescript",
     "express-security"
   ],
-  "author": "Saurabh Pande",
+  "homepage": "https://github.com/INVINCIBLE06/api-shield#readme",
+  "bugs": {
+    "url": "https://github.com/INVINCIBLE06/api-shield/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/INVINCIBLE06/api-shield.git"
+  },
   "license": "ISC",
+  "author": "Saurabh Pande",
   "type": "commonjs",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "directories": {
+    "doc": "docs",
+    "example": "examples",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "express-rate-limit": "^8.5.2"
+  },
   "devDependencies": {
     "@types/express": "^5.0.6",
     "@types/jest": "^30.0.0",
@@ -30,8 +46,5 @@
     "jest": "^30.4.2",
     "tsup": "^8.5.1",
     "typescript": "^6.0.3"
-  },
-  "dependencies": {
-    "express-rate-limit": "^8.5.2"
   }
 }

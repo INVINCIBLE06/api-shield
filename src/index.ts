@@ -1,9 +1,9 @@
 import { ApiShieldOptions } from "./types";
 
-import { createRateLimiter } from "./middleware/rateLimiter";
-import { requestLogger } from "./middleware/requestLogger";
-import { securityHeaders } from "./middleware/securityHeaders";
-import { ipBlocker } from "./middleware/ipBlocker";
+import { createRateLimiter } from "./middleware/rateLimiter/rateLimiter";
+import { requestLogger } from "./middleware/logger/requestLogger";
+import { securityHeaders } from "./middleware/securityHeaders/securityHeaders";
+import { ipBlocker } from "./middleware/ipBlocker/ipBlocker";
 
 export default function apiShield(
   options: ApiShieldOptions = {}
