@@ -8,11 +8,13 @@
     "security",
     "api",
     "rate-limit",
-    "helmet",
     "jwt",
     "nodejs",
     "typescript",
-    "express-security"
+    "express-security",
+    "logging",
+    "monitoring",
+    "rate-limiter"
   ],
   "homepage": "https://github.com/INVINCIBLE06/api-shield#readme",
   "bugs": {
@@ -22,23 +24,31 @@
     "type": "git",
     "url": "git+https://github.com/INVINCIBLE06/api-shield.git"
   },
-  "license": "ISC",
+  "license": "MIT",
   "author": "Saurabh Pande",
-  "type": "commonjs",
+  "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "directories": {
-    "doc": "docs",
-    "example": "examples",
-    "test": "tests"
-  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc"
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "lint": "eslint .",
+    "test": "jest"
   },
-  "dependencies": {
-    "express-rate-limit": "^8.5.2"
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=18"
   },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "sideEffects": false,
+  "dependencies": {},
   "devDependencies": {
     "@types/express": "^5.0.6",
     "@types/jest": "^30.0.0",
