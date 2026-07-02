@@ -1,23 +1,23 @@
 import { ShieldOptions } from "../core/types";
-import { DEFAULT_RATE_LIMIT } from "./defaults";
+import { DEFAULT_IP_BLOCKER, DEFAULT_RATE_LIMITER_OPTIONS, DEFAULT_REQUEST_LOGGER, DEFAULT_SECURITY_HEADER } from "./defaults";
 
 export function normalize(options: ShieldOptions): ShieldOptions {
   return {
     rateLimiter: {
-      ...DEFAULT_RATE_LIMIT,
+      ...DEFAULT_RATE_LIMITER_OPTIONS,
       ...options.rateLimiter,
     },
 
     requestLogger: {
-      enabled: options.requestLogger?.enabled ?? false,
+      ...options.requestLogger, ...DEFAULT_REQUEST_LOGGER
     },
 
     securityHeaders: {
-      enabled: options.securityHeaders?.enabled ?? false,
+      ...options.securityHeaders, ...DEFAULT_SECURITY_HEADER,
     },
 
     ipBlocker: {
-      enabled: options.ipBlocker?.enabled ?? false,
+      ...options.ipBlocker, ...DEFAULT_IP_BLOCKER,
     },
   };
 }
